@@ -1,0 +1,78 @@
+@import '../variables.scss';
+$checkbox-size: 25px;
+
+.task-item{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1.2px solid black;
+    padding: 0 5px 0 10px;
+    &:nth-child(odd) {
+        background-color: #F3F6E3;
+    }
+    &:nth-child(even) {
+        background-color: white;
+    }
+    &.done{
+        border-bottom: 1px solid black;
+        .item-text{
+            color: $color-checked;
+            text-decoration: line-through;
+        }
+    }
+    .item-text{
+        flex-grow: 1;
+        margin: 0 20px;
+        padding: 3px;
+        cursor: pointer;
+    }
+    input.item-text{
+        border: none;
+        border-bottom: 1px solid $color-checked;
+        font-size: inherit;
+        position: relative;
+        &:focus{
+            outline: none;
+        }
+        &:invalid{
+            border-bottom-color: $color-error;
+        }
+    }
+    .item-delete{
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .checkbox-container{
+        display: block;
+        position: relative;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        cursor: pointer;
+        .checkmark{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $checkbox-size;
+            width: $checkbox-size;
+            background-color: #F0F0F0;
+            border: 1px solid #8F8F8F;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: $checkbox-size;
+            width: $checkbox-size;
+            &:checked{
+                ~ .checkmark{
+                    background-color: $color-checked;
+                }
+            }
+        }
+    }
+}

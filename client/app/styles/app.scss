@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+@import './components/components.scss';
+@import './routes/routes.scss';
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-size: $font-size-main;
+    background-color: #E5E5E5;
+}
+
+.rtl{
+    direction: rtl;
+}

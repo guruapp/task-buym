@@ -1,0 +1,12 @@
+<div class="tasks-container">
+    {{tasks-header class="tasks-header" onAddItem=(action "toggleAddingItem")}}
+    {{tasks-list 
+        tasksList=model
+        isAddingItem=isAddingItem
+        class="tasks-main" 
+        onDeleteItem=(action "deleteItem")
+        onUpdateItem=(action "editItem")
+        onAddItem=(action "addTaskItem")
+        onAddItemCanceled=(action "addTaskCanceled")}}
+    {{footer-tasks class="tasks-footer" tasksList=model}}
+</div>

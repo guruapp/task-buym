@@ -1,0 +1,14 @@
+<ul class="tasks-list">
+    {{#if isAddingItem}}
+        {{task-item onItemUpdated=(action "addItem") editCanceled=(action "addItemCanceled")}}
+    {{/if}}
+    {{#each tasksList as |taskItem index|}}
+        {{task-item 
+            task=taskItem 
+            itemIndex=index 
+            onDeleteItem=(action "deleteItem")
+            onItemUpdated=(action "updateItem")}}
+    {{else}}
+        <p class="empty-message">{{{emptyListMessage}}}</p>
+    {{/each}}
+</ul>

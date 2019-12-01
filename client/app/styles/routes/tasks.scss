@@ -1,0 +1,13 @@
+.tasks-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.tasks-main{
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+.tasks-header,
+.tasks-footer{
+    flex-shrink: 0;
+}
